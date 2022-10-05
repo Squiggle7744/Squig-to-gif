@@ -1,7 +1,7 @@
-const event = require('./event');
+import event from './event';
 
 "use strict"
-module.exports = animationLoop
+export default animationLoop
 
 //internal script
 function animationLoop({
@@ -51,7 +51,7 @@ function animationLoop({
 
         function onLoopFrame() {
             onPreRender.invoke()
-            renderCallback()
+            // renderCallback()
             onPostRender.invoke()
         }
     }

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "HelveticaBlack";
+    src: url("../public/fonts/Helvetica\ Neue\ Black.ttf");
+
+    font-family: "HelveticaRoman";
+    src: url("../public/fonts/HelveticaNeue-Roman.otf")
+  }

@@ -10,14 +10,15 @@ export default gifLoop
 function gifLoop(loop, {
     render = true,
     open = false,
-    download = false,
+    download = true,
     startLoop = 0,
     endLoop = 1,
-    fileName = "image.gif",
+    fileName = "squig.gif",
     onFinishRender = undefined,	
     canvas = document.getElementsByTagName('canvas')[0],
     options = {},
 } = {}) {
+
 
     if (canvas === undefined) {
         console.error('GIF module: no canvas found');
@@ -27,6 +28,7 @@ function gifLoop(loop, {
     const gifjs = new GIF(Object.assign({
         workerScript,
     }, options));
+
 
     let isFinished = false
     let renderStartTime = undefined

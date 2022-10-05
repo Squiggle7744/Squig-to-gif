@@ -14,13 +14,12 @@ function createLoop({
     gifFileName = undefined,
     gifOnFinishRender = undefined,
     gifOptions = undefined,    
-    noise = {},
-    noiseRadius = undefined,
-    noiseSeed = undefined,
     canvas = undefined,
 } = {}) {
     const loop = {}
+
     animationLoop({ framesPerSecond, duration, loop });
+    
     if (gif !== false) {
         gif = gif === true ? {} : gif
         if (canvas !== undefined) gif.canvas = canvas
@@ -34,5 +33,6 @@ function createLoop({
         if (gifOnFinishRender !== undefined) gif.onFinishRender = gifOnFinishRender
         gifLoop(loop, gif)
     }
+    console.log(loop)
     return loop
 }

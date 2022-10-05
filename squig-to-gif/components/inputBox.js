@@ -1,34 +1,16 @@
-import React, { useEffect } from "react";
+import React, { createContext } from "react";
 import { useState } from "react";
-import { SquigLookup } from "../GraphQL/queries";
-import { checkSquig } from "../squigChecker";
-import graphQLClient from "../GraphQL/graphQLClient"
-import dynamic from "next/dynamic";
-import { setup, draw } from '../p5/sketch.js';
-
-const Sketch = dynamic(() => import('../p5/p5Component'), { ssr: false });
-
-// const SquigFrame = ({ tokenID }) => {
-//   const validatedTokenID = checkSquig(tokenID)
-
-//   return (
-//     <iframe
-//       title="Live Squiggle View"
-//       className="w-full h-full rounded-xl shadow-2xl"
-//       src={`https://generator.artblocks.io/${validatedTokenID}`}
-//     />
-//   );
-// };
+import { useRouter } from "next/router";
 
 const InputBox = () => {
+  
   const [tokenID, setID] = useState(3659);
-  const [squig, setSquig] = useState();
+  const router = useRouter()
+
 
   async function handleSubmit(event) {
     event.preventDefault(); 
-    const validatedTokenID = checkSquig(tokenID)
-    const gotSquig = await graphQLClient.request(SquigLookup(validatedTokenID))
-    setSquig(gotSquig)
+    router.push("/" + tokenID)
   }
   
   function handleInput(event) {
@@ -40,18 +22,24 @@ const InputBox = () => {
     <>
     
     <div className="relative grid min-h-screen flex-row justify-center 
-    bg-gradient-to-br from-stone-200 to-stone-500 p-6 sm:py-12">
+     bg-white p-6 sm:py-12">
       <div className="left-0 right-0 top-0 bottom-0 self-end">
-        <div className="w-96 h-64 order-1 mb-12">
-        <Sketch setup={setup} draw={draw}></Sketch>
+        {/* div here MUST have id='sketch-holder' in order for Sketch to render in this div */}
+        <div className="sm:w-[300px] lg:w-[600px] rounded-2xl">
+        <h1 id="CTA" className="w-full order-1 text-6xl rounded-2xl text-center font-bold font-helveticaBlack py-4">
+          SQUIG ➡️ GIF
+        </h1>
+        <h2 className="text-center font-helveticaRoman text-xl pt-4 pb-8">
+          Save any Chromie Squiggle as a .gif 
+        </h2>
         </div>
       </div>
 
 
       {/* Input Form */}
-      <div className="relative h-32 justify-self-center rounded-2xl bg-white px-6 pt-10 pb-8 shadow-xl ring-1 
-      ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10 z-10 order-2">
-        <div className="mx-auto max-w-md">
+      <div className="relative h-32 justify-self-center place-items-center align-items-center rounded-2xl bg-white px-6 pt-10 pb-8 shadow-2xl ring-1 
+      ring-gray-900/5 sm:mx-auto sm:max-w-lg sm:px-10 z-10 order-2 border-4 border-black">
+        <div className="mx-auto align-center max-w-md">
           <form onSubmit={handleSubmit} className="relative mx-auto w-max">
             <input
               type="search"
@@ -59,13 +47,13 @@ const InputBox = () => {
               value={tokenID}
               className="peer cursor-pointer relative z-10 h-12 rounded-full 
               border bg-transparent outline-none w-full focus:cursor-text 
-              focus:border-stone-900 pl-16 pr-4"
+              focus:border-stone-900 pl-16 pr-4 font-helveticaRoman italic"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent 
-              stroke-gray-500 px-3.5 peer-focus:border-stone-300 
-              peer-focus:stroke-stone-800"
+              stroke-gray-500 px-3.5 peer-focus:border-black 
+              peer-focus:stroke-black"
               fill="none"
               viewBox="0 0 24 24"
               stroke="black"

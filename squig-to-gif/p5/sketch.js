@@ -1,12 +1,6 @@
-
-// import createLoop from "../createLoop/createLoop";
-// if(typeof window !== "undefined" && typeof window.navigator !== 'undefined') {
-//     import("../createLoop/createLoop");
-
-// }
-import dynamic from "next/dynamic";
-
-const createLoop = dynamic(() => import('../createLoop/createLoop'), { ssr: false });
+// import dynamic from "next/dynamic";
+// const createLoop = dynamic(() => import('../createLoop/createLoop'), { ssr: false });
+// import createLoop from '../createLoop/createLoop';
 
 let tokenData = {
   tokenId: "77",
@@ -50,15 +44,10 @@ let segmented = decPairs[24] < 30;
 let fuzzy = pipe && !slinky;
 
 export async function setup(p5, parent) {
+  const createLoop = (await import("../createLoop/createLoop")).default;
   let portrait = p5.windowWidth < p5.windowHeight;
-  p5.createCanvas(
-    p5.windowWidth > (p5.windowHeight * 3) / 2
-      ? (p5.windowHeight * 3) / 2
-      : p5.windowWidth,
-    p5.windowWidth > (p5.windowHeight * 3) / 2
-      ? p5.windowHeight
-      : (p5.windowWidth * 2) / 3
-  );
+  var canvas = p5.createCanvas(600,400);
+  canvas.parent('sketch-holder');
   var el = document.getElementsByTagName("canvas")[0];
   el.addEventListener("touchstart", mouseClicked, false);
   p5.colorMode(p5.HSB, 255);
@@ -68,7 +57,7 @@ export async function setup(p5, parent) {
   p5.strokeWeight(p5.height / 1200);
 
   console.log(typeof createLoop);
-//   createLoop({ duration: 3, gif: true });
+  createLoop({ duration: 3, gif: true });
 }
 
 export async function draw(p5) {

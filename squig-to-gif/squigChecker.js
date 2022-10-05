@@ -6,7 +6,7 @@ export const checkSquig = (tokenID) => {
       (tokenID > squigsMinted) |
       (tokenID < 0)
     ) {
-      tokenID = Math.floor(Math.random() * squigsMinted);
+      return tokenID = Math.floor(Math.random() * squigsMinted);
     } else {
         return tokenID
     }

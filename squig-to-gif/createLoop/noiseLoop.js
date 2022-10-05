@@ -1,6 +1,6 @@
 "use strict"
-const SimplexNoise = require('simplex-noise');
-module.exports = noiseLoop
+import SimplexNoise from 'simplex-noise';
+export default noiseLoop
 
 const SEED_MULTIPLIER = 999999
 
