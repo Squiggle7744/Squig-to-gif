@@ -18,13 +18,11 @@ const InputBox = () => {
   }
 
   return (
-    // Background
     <>
     
     <div className="relative grid min-h-screen flex-row justify-center 
      bg-white p-6 sm:py-12">
       <div className="left-0 right-0 top-0 bottom-0 self-end">
-        {/* div here MUST have id='sketch-holder' in order for Sketch to render in this div */}
         <div className="sm:w-[300px] lg:w-[600px] rounded-2xl">
         <h1 id="CTA" className="w-full order-1 text-6xl rounded-2xl text-center font-bold font-helveticaBlack py-4">
           SQUIG ➡️ GIF
