@@ -33,6 +33,8 @@ function createLoop({
         if (gifOnFinishRender !== undefined) gif.onFinishRender = gifOnFinishRender
         gifLoop(loop, gif)
     }
+
+
     console.log(loop)
     return loop
 }

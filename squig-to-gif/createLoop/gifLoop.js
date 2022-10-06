@@ -19,12 +19,12 @@ function gifLoop(loop, {
     options = {},
 } = {}) {
 
+    const ctx = canvas.getContext('2d')
 
     if (canvas === undefined) {
         console.error('GIF module: no canvas found');
         return
     }
-
     const gifjs = new GIF(Object.assign({
         workerScript,
     }, options));
@@ -54,8 +54,10 @@ function gifLoop(loop, {
 
 
     function addFrame() {
-        // console.log(`adding frame ${loop.elapsedFrames}`);
-        gifjs.addFrame(canvas, { copy: true, delay: loop.frameDeltaTime })
+        console.log(`adding frame ${loop.elapsedFrames}`);
+        if (ctx.getImageData(0,0,5,5).data[0] != 0) {
+            gifjs.addFrame(canvas, { copy: true, delay: loop.frameDeltaTime })
+        }
     }
 
     function startRendering() {
@@ -84,7 +86,7 @@ function gifLoop(loop, {
             loop.onLoop.addListener(renderOnLoop)
             function renderOnLoop() {
                 loop.onLoop.removeListener(renderOnLoop)
-                renderImage(imgUrl, fileName)
+                // renderImage(imgUrl, fileName)
             }
         }
         if (onFinishRender && typeof onFinishRender === "function") 
