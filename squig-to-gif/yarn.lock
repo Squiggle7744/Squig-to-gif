@@ -392,11 +392,6 @@
   "resolved" "https://registry.npmjs.org/@types/node/-/node-17.0.35.tgz"
   "version" "17.0.35"
 
-"@types/p5@1.3.3":
-  "integrity" "sha512-PBSFnX6IgV6Pqlx9wocUjSkGlm1I1ymz9tEiTbdNCqig6FOGiWcVUHx13TXRTBfRIhZC9+MqqgztMsgzpueaUg=="
-  "resolved" "https://registry.npmjs.org/@types/p5/-/p5-1.3.3.tgz"
-  "version" "1.3.3"
-
 "@types/prop-types@*":
   "integrity" "sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w=="
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
@@ -912,7 +907,7 @@
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.3.4.tgz"
   "version" "3.3.4"
 
-"next@latest":
+"next@12.3.0":
   "integrity" "sha512-GpzI6me9V1+XYtfK0Ae9WD0mKqHyzQlGq1xH1rzNIYMASo4Tkl4rTe9jSqtBpXFhOS33KohXs9ZY38Akkhdciw=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.3.0.tgz"
   "version" "12.3.0"
@@ -965,20 +960,10 @@
   "resolved" "https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz"
   "version" "3.0.0"
 
-"opencollective-postinstall@2.0.2":
-  "integrity" "sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw=="
-  "resolved" "https://registry.npmjs.org/opencollective-postinstall/-/opencollective-postinstall-2.0.2.tgz"
-  "version" "2.0.2"
-
 "p5@^1.4.2":
   "integrity" "sha512-J5zqZ/l1NIbJSuNr/FH9nDYgBRg7/NubStNPnx1fQCMSAgxI6peKDHs9i5iaG9EuwbJzjuG6/5bX/D0lqqrP9A=="
   "resolved" "https://registry.npmjs.org/p5/-/p5-1.4.2.tgz"
   "version" "1.4.2"
-
-"p5@1.3.1":
-  "integrity" "sha512-g7W2htgEwiAEGcl0WHccAJKbunUJwrUojUSR9+KihphJ33p5VpDdh1K8pDx4ppYjOr/lVEXaZ1XXDj27nwlNOg=="
-  "resolved" "https://registry.npmjs.org/p5/-/p5-1.3.1.tgz"
-  "version" "1.3.1"
 
 "path-parse@^1.0.7":
   "integrity" "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw=="
@@ -1072,7 +1057,7 @@
   "resolved" "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   "version" "5.1.1"
 
-"react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>= 17.0.1", "react-dom@18.1.0":
+"react-dom@^17.0.2 || ^18.0.0-0", "react-dom@18.1.0":
   "integrity" "sha512-fU1Txz7Budmvamp7bshe4Zi32d0ll7ect+ccxNu9FlObT605GOEB8BfO4tmRJ39R5Zj831VCpvQ05QPBW5yb+w=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.1.0.tgz"
   "version" "18.1.0"
@@ -1080,24 +1065,7 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.22.0"
 
-"react-p5-plus-createLoop@https://github.com/Squiggle7744/react-p5-plus-createLoop.git":
-  "resolved" "git+ssh://git@github.com/Squiggle7744/react-p5-plus-createLoop.git#afaeb8272daca67d68378ec4d110e533e8d2e02c"
-  "version" "1.3.30"
-  dependencies:
-    "@types/p5" "1.3.3"
-    "opencollective-postinstall" "2.0.2"
-    "p5" "1.3.1"
-
-"react-p5@^1.3.30":
-  "integrity" "sha512-0RBwKj2E9SKTnIVdZ0Huzc3ea+gaPL9eH06hYvvlwDDII1ySg2u2CwgVqlJxpl6cgc8c0yG5HL03fKz6KEqonw=="
-  "resolved" "https://registry.npmjs.org/react-p5/-/react-p5-1.3.30.tgz"
-  "version" "1.3.30"
-  dependencies:
-    "@types/p5" "1.3.3"
-    "opencollective-postinstall" "2.0.2"
-    "p5" "1.3.1"
-
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>= 17.0.1", "react@18.1.0":
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17.0.2 || ^18.0.0-0", "react@^18.1.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.1.0":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"
